@@ -1,0 +1,6 @@
+{
+  "production": {
+    "name": "test",
+    "apiToken": "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhcGkubGl2ZXN0b3JtLmNvIiwianRpIjoiYTY3ZDk4ODAtOGIzMi00M2FmLWEwNDYtMzEzZjBjMTc0ZjRmIiwiaWF0IjoxNjMyMTI5MTg1LCJvcmciOiIwNjA4ZWJlMi1kZjc4LTRkZjMtYmZhMS00YzQ5N2FlYmM4MWEifQ.V-moYvE22QAOhwfHLPFuqDGgtePJaq1fqRzM8lKXe9E"
+  }
+}

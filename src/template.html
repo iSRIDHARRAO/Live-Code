@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+  <style>
+
+
+    button {
+  margin-right: 15px;
+}
+   .container1{
+      height: 550px;
+      width: 800px;
+    }
+    body{
+      position: fixed;
+    }
+    .row1{
+      height: 520px;
+      width: 790px;
+    }
+    *{
+        font-family: 'Inter', sans-serif;
+      }
+      .close-button{
+        display:none;
+      }
+    div,
+    html,
+    body,
+    section {
+      margin: 0px; 
+   
+    }
+    #main-text{
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    .style{
+     margin-bottom: 10px;
+     min-height: 150px;
+     background-color: pink;
+     text-align: center;
+     font-size: large;
+     margin-top: 10px;
+    }
+
+    .inner-code{
+        display: flex;
+    }
+    .button{
+      margin-left:90px;
+      padding-top: 5px;
+      display: flex;
+    }
+    #sk{
+        margin: 10px;
+    }
+    #share{
+        font-size:25px;
+    }
+    .logo{
+      width: 853px;
+      margin-left: 20px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+    }
+    .ls-tooltip{
+      margin-left: 20px;
+    }
+    #k{
+      margin-left: 90px;
+      margin-top: 0px;
+    }
+    .pub{
+        margin-left: 75%;
+    }
+    
+    img{
+      border-radius: 50%;
+    }
+
+
+  </style>
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/livestorm/livestorm-plugin/dist/assets/css/style.css">
+  <title>chat1</title>
+</head>
+</html>
+<body>
+<div class="container, container1">
+  <div class="row row1">
+    <div class="col-md-12 col-sm-6 col-xs-3">
+    <div class="logo">
+      <img height="70px" src="https://livestorm-ireland-plugin-assets.s3-eu-west-1.amazonaws.com/6029a1bb-5680-4435-821f-f16d5d39a33c/logo.png">
+      <div class="ls-tooltip" >
+          <div class="inner-text">
+        <p class="ls-text-32-semibold" id="share">Share your code</p>
+        <p id="main-text">To Share code as message click Send...<br>To Colllaborate Code click Publish...</p>
+      </div>
+      </div>
+    </div>
+    <div class="row">
+     
+    <div>
+      <textarea id="code"  placeholder="Enter your </Code>...."class="text , area k" rows="14" style="margin: 0px 0px 0px 110px; height: 405px; width: 760px;"></textarea>
+  </div>
+    <div class="button">
+      <div class="row">
+      <div class="col-sm-6" id="sk">
+        
+       </div>
+      </div>
+        <button onclick="closemodal()" class="ls-button ls-button-tertiary">
+        <div class="ls-button-wrapper">
+          Cancel
+        </div>
+       </button>
+        <button onclick="sendmessage()" class="ls-button ls-button-primary">
+          <div class="ls-button-wrapper">
+            Send
+          </div>
+       </button>
+       <button onclick="publishmessage()" class="ls-button ls-button-green-primary pub">
+          <div class="ls-button-wrapper ">
+            Publish
+          </div>
+       </button>
+    </div>
+   </div>
+  </div>
+</div>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+    crossorigin="anonymous"
+  ></script>
+  <script>
+    var textareas = document.getElementsByTagName('textarea');
+var count = textareas.length;
+for(var i=0;i<count;i++){
+    textareas[i].onkeydown = function(e){
+        if(e.keyCode==9 || e.which==9){
+            e.preventDefault();
+            var s = this.selectionStart;
+            this.value = this.value.substring(0,this.selectionStart) + "\t" + this.value.substring(this.selectionEnd);
+            this.selectionEnd = s+1; 
+        }
+    }
+}
+function publishmessage(){
+  const message =document.getElementById('code').value
+  var a = {"message": `${message}` ,"change":"registered"}
+  postMessage(a)
+  closeModal();
+}
+function closemodal(){
+  closeModal();
+}
+function sendmessage(){
+  const message =document.getElementById('code').value
+  if( message !== '' ){
+  postMessage({"message": `${message}`, "change":"no"});
+  closeModal();}
+} </script>
+</body>
+</html>
