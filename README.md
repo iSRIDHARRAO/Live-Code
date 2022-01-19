@@ -23,5 +23,5 @@ Send your code as message in the text area
 Publish code for all your teammates.
 
 
- 
-[![Demo CountPages alpha](https://share.gifyoutube.com/KzB6Gb.gif)](https://youtu.be/2VuQU5M-GLU)
+# Here's the link to demo video how it works...
+https://youtu.be/2VuQU5M-GLU
